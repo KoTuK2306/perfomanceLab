@@ -1,19 +1,15 @@
 import * as React from "react";
-import { useState } from "react";
+import { CircularProgress } from "./components";
 import { mockedData } from "./mocks/mockedData";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   React.useEffect(() => {
     console.log(mockedData);
   });
 
   return (
     <>
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
-      </button>
+      <CircularProgress />
     </>
   );
 }
