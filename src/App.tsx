@@ -1,8 +1,13 @@
 import * as React from "react";
 import { useState } from "react";
+import { mockedData } from "./mocks/mockedData";
 
 function App() {
   const [count, setCount] = useState(0);
+
+  React.useEffect(() => {
+    console.log(mockedData);
+  });
 
   return (
     <>
