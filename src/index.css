@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Roboto Regular";
+  src: url(/fonts/RobotoRegular.ttf);
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+:root {
+  font-family: Roboto Regular, Inter, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --firstColor: #ff5959;
+  --secondColor: #1c1e3e;
+}
