@@ -1,15 +1,15 @@
-import * as React from "react";
-import { CircularProgress } from "./components";
+import { useEffect } from "react";
 import { mockedData } from "./mocks/mockedData";
+import { LoadingPage } from "./pages";
 
 function App() {
-  React.useEffect(() => {
+  useEffect(() => {
     console.log(mockedData);
   });
 
   return (
     <>
-      <CircularProgress />
+      <LoadingPage />
     </>
   );
 }

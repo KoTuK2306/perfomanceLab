@@ -1,4 +1,3 @@
-import * as React from "react";
 import classes from "./circularProgress.module.css";
 
 export const CircularProgress = () => {
