@@ -1,9 +1,9 @@
 import { Arrow } from "../../images";
-import classes from "./tableHead.module.css";
 import { useAppSelector } from "./../../hooks/useAppSelector";
 import { useAppDispatch } from "./../../hooks/useAppDispatch";
 import { Sorting } from "../../enums";
 import { changeSorting } from "../../store/slicers";
+import classes from "./tableHead.module.css";
 
 export const TableHead = () => {
   const dispatch = useAppDispatch();

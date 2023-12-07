@@ -17,7 +17,7 @@ export const initialState: AppState = {
   currentPage: 1,
   itemsPerPage: 15,
   currentCategory: Categories.FOOD,
-  sorting: Sorting.NAME_ASC,
+  sorting: Sorting.UNDEFINED,
 };
 
 const appSlice = createSlice({
@@ -36,6 +36,7 @@ const appSlice = createSlice({
     changeCategory(state, action: PayloadAction<Categories>) {
       state.currentCategory = action.payload;
       state.currentPage = 1;
+      state.sorting = Sorting.UNDEFINED;
     },
     changeSorting(state, action: PayloadAction<Sorting>) {
       state.sorting = action.payload;
