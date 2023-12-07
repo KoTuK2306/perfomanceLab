@@ -9,7 +9,14 @@
   width: 0px;
   background-color: var(--fourthColor);
   transition: width 0.1s;
-  overflow-y: scroll;
+  overflow-y: auto;
+}
+
+.sideBarWrapper > h3 {
+  font-size: 24px;
+  text-align: center;
+  color: var(--secondColor);
+  margin-bottom: 14px;
 }
 
 .activeSideBar {
