@@ -1,7 +1,6 @@
-@import "../../index.css";
-
 .mainWrapper {
   position: absolute;
+  z-index: 20;
   top: 0;
   bottom: 0;
   left: 0;

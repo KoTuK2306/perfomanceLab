@@ -4,11 +4,13 @@ import { StoreProduct } from "../../mocks";
 type AppState = {
   items: StoreProduct[];
   isLoading: boolean;
+  currentPage: number;
 };
 
 export const initialState: AppState = {
   items: [],
   isLoading: false,
+  currentPage: 1,
 };
 
 const appSlice = createSlice({
@@ -21,8 +23,12 @@ const appSlice = createSlice({
     changeIsLoading(state, action: PayloadAction<boolean>) {
       state.isLoading = action.payload;
     },
+    changeCurrentPage(state, action: PayloadAction<number>) {
+      state.currentPage = action.payload;
+    },
   },
 });
 
-export const { addItems, changeIsLoading } = appSlice.actions;
+export const { addItems, changeIsLoading, changeCurrentPage } =
+  appSlice.actions;
 export default appSlice.reducer;

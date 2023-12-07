@@ -1,0 +1,19 @@
+.button {
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 6px;
+  background-color: var(--fourthColor);
+  color: var(--secondColor);
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.activeButton,
+.button:hover {
+  background-color: var(--firstColor);
+  color: var(--fourthColor);
+}
