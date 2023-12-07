@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Categories, StoreProduct } from "../../mocks";
+import { Categories, Sorting } from "../../enums";
+import { StoreProduct } from "../../mocks";
 
 type AppState = {
   items: StoreProduct[];
@@ -7,6 +8,7 @@ type AppState = {
   currentPage: number;
   itemsPerPage: number;
   currentCategory: Categories;
+  sorting: Sorting;
 };
 
 export const initialState: AppState = {
@@ -15,6 +17,7 @@ export const initialState: AppState = {
   currentPage: 1,
   itemsPerPage: 15,
   currentCategory: Categories.FOOD,
+  sorting: Sorting.NAME_ASC,
 };
 
 const appSlice = createSlice({
@@ -34,9 +37,17 @@ const appSlice = createSlice({
       state.currentCategory = action.payload;
       state.currentPage = 1;
     },
+    changeSorting(state, action: PayloadAction<Sorting>) {
+      state.sorting = action.payload;
+    },
   },
 });
 
-export const { addItems, changeIsLoading, changeCurrentPage, changeCategory } =
-  appSlice.actions;
+export const {
+  addItems,
+  changeIsLoading,
+  changeCurrentPage,
+  changeCategory,
+  changeSorting,
+} = appSlice.actions;
 export default appSlice.reducer;

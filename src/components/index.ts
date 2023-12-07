@@ -5,3 +5,4 @@ export * from "./storeItem/";
 export * from "./pageButton";
 export * from "./pagination/";
 export * from "./categories";
+export * from "./categoryButton";

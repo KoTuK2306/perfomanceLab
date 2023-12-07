@@ -1,8 +1,4 @@
-export enum Categories {
-  FOOD = "Еда",
-  CLOTHES = "Одежда",
-  ELECTRONICS = "Электроника",
-}
+import { Categories } from "../enums";
 
 export interface StoreProduct {
   category: `${Categories}`;
