@@ -1,17 +1,24 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { mockedData } from "./mocks/mockedData";
 import { LoadingPage } from "./pages";
 
 function App() {
-  useEffect(() => {
-    console.log(mockedData);
-  });
+  const [isLoading, setIsLoading] = useState(false);
 
-  return (
-    <>
-      <LoadingPage />
-    </>
-  );
+  useEffect(() => {
+    (function () {
+      setIsLoading(true);
+      const promise = new Promise((resolve) =>
+        setTimeout(() => resolve(mockedData), 1500)
+      );
+      promise.then((data) => {
+        setIsLoading(false);
+        console.log(data);
+      });
+    })();
+  }, []);
+
+  return <>{isLoading && <LoadingPage />}</>;
 }
 
 export default App;
