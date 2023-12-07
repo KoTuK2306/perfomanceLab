@@ -1,0 +1,14 @@
+.sideBarWrapper {
+  position: absolute;
+  right: 0;
+  top: var(--headerHeight);
+  height: calc(100vh - var(--headerHeight));
+  width: 0;
+  background-color: var(--fourthColor);
+  border-left: 1px solid var(--firstColor);
+  transition: all 0.1s;
+}
+
+.activeSideBar {
+  width: 300px;
+}

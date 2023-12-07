@@ -21,16 +21,7 @@
   height: 40px;
 }
 
-.burger > svg {
-  width: 40px;
-  height: 40px;
-}
-
-.burger > svg * {
-  fill: var(--secondColor);
-  transition: all 0.1s;
-}
-
-.burger:hover svg * {
-  fill: var(--firstColor);
+.burger > img {
+  width: 30px;
+  height: 30px;
 }

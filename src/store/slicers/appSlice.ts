@@ -12,6 +12,7 @@ type AppState = {
   isOpenInfoAlert: boolean;
   textInfoAlert: string;
   cartItems: Map<number, Omit<StoreProduct, "id" | "category">>;
+  isOpenSideBar: boolean;
 };
 
 export const initialState: AppState = {
@@ -24,6 +25,7 @@ export const initialState: AppState = {
   isOpenInfoAlert: false,
   textInfoAlert: "",
   cartItems: new Map(),
+  isOpenSideBar: false,
 };
 
 const appSlice = createSlice({
@@ -59,6 +61,9 @@ const appSlice = createSlice({
     ) {
       state.cartItems = action.payload;
     },
+    changeIsOpenSideBar(state, action: PayloadAction<boolean>) {
+      state.isOpenSideBar = action.payload;
+    },
   },
 });
 
@@ -71,5 +76,6 @@ export const {
   changeIsOpenInfoAlert,
   changeTextInfoAlert,
   changeCartItems,
+  changeIsOpenSideBar,
 } = appSlice.actions;
 export default appSlice.reducer;

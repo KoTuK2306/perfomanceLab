@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { Categories, Header, Pagination, StoreItems } from "../../components";
+import {
+  Categories,
+  Header,
+  Pagination,
+  SideBar,
+  StoreItems,
+} from "../../components";
 import { Sorting } from "../../enums";
 import { StoreProduct } from "../../mocks";
 import { sortStoreItems } from "../../utils";
@@ -34,6 +40,7 @@ export const MainPage = () => {
         <Pagination
           pagesCount={Math.ceil(filteredItems.length / itemsPerPage)}
         />
+        <SideBar />
       </section>
     </>
   );
