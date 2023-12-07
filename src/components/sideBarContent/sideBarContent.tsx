@@ -6,7 +6,7 @@ export const SideBarContent = () => {
   const dispatch = useAppDispatch();
   const cartItems = useAppSelector((state) => state.app.cartItems);
 
-  const handleDelete = (id: number) => {
+  const handleDelete = (id: string) => {
     const newItems = new Map(cartItems.entries());
     newItems.delete(id);
     dispatch(changeCartItems(newItems));

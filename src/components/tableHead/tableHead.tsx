@@ -8,17 +8,27 @@ export const TableHead = () => {
   const dispatch = useAppDispatch();
   const sorting = useAppSelector((state) => state.app.sorting);
 
+  const handleChangeNameSorting = () => {
+    if (sorting !== Sorting.NAME_ASC) {
+      dispatch(changeSorting(Sorting.NAME_ASC));
+      return;
+    }
+    dispatch(changeSorting(Sorting.NAME_DESC));
+  };
+
+  const handleChangePriceSorting = () => {
+    if (sorting !== Sorting.PRICE_ASC) {
+      dispatch(changeSorting(Sorting.PRICE_ASC));
+      return;
+    }
+    dispatch(changeSorting(Sorting.PRICE_DESC));
+  };
+
   return (
     <div className={classes.head}>
       <div />
       <button
-        onClick={() => {
-          if (sorting !== Sorting.NAME_ASC) {
-            dispatch(changeSorting(Sorting.NAME_ASC));
-            return;
-          }
-          dispatch(changeSorting(Sorting.NAME_DESC));
-        }}
+        onClick={handleChangeNameSorting}
         className={
           sorting === Sorting.NAME_ASC
             ? classes.sortButton
@@ -30,15 +40,8 @@ export const TableHead = () => {
           <Arrow />
         )}
       </button>
-
       <button
-        onClick={() => {
-          if (sorting !== Sorting.PRICE_ASC) {
-            dispatch(changeSorting(Sorting.PRICE_ASC));
-            return;
-          }
-          dispatch(changeSorting(Sorting.PRICE_DESC));
-        }}
+        onClick={handleChangePriceSorting}
         className={
           sorting === Sorting.PRICE_ASC
             ? classes.sortButton

@@ -14,7 +14,7 @@ export const StoreItem: FC<StoreItemProps> = ({ id, price, name }) => {
   const dispatch = useAppDispatch();
   const cartItems = useAppSelector((state) => state.app.cartItems);
 
-  const handleChange = (id: number) => {
+  const handleChange = (id: string) => {
     if (cartItems.has(id)) {
       const newItems = new Map(cartItems.entries());
       newItems.delete(id);
