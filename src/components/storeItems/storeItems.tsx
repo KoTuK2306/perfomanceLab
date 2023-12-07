@@ -1,9 +1,14 @@
+import { FC } from "react";
+import { StoreProduct } from "../../mocks";
 import { StoreItem } from "../storeItem";
 import { useAppSelector } from "./../../hooks";
 import classes from "./storeItems.module.css";
 
-export const StoreItems = () => {
-  const items = useAppSelector((state) => state.app.items);
+interface StoreItemsProps {
+  items: StoreProduct[];
+}
+
+export const StoreItems: FC<StoreItemsProps> = ({ items }) => {
   const currentPage = useAppSelector((state) => state.app.currentPage);
   const itemsPerPage = useAppSelector((state) => state.app.itemsPerPage);
 
@@ -12,17 +17,16 @@ export const StoreItems = () => {
       <div className={classes.head}>
         <div />
         <p>Наименование товара</p>
-        <p>Категория</p>
         <p>Цена</p>
       </div>
       <div className={classes.body}>
-        {[...items]
+        {items
           .slice(
             currentPage * itemsPerPage - itemsPerPage,
             currentPage * itemsPerPage
           )
-          .map(({ id, category, name, price }) => (
-            <StoreItem key={id} category={category} name={name} price={price} />
+          .map(({ id, name, price }) => (
+            <StoreItem key={id} name={name} price={price} />
           ))}
       </div>
     </div>

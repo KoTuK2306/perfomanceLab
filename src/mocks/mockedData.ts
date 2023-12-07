@@ -1,7 +1,11 @@
-type Category = "Еда" | "Одежда" | "Электроника";
+export enum Categories {
+  FOOD = "Еда",
+  CLOTHES = "Одежда",
+  ELECTRONICS = "Электроника",
+}
 
 export interface StoreProduct {
-  category: Category;
+  category: `${Categories}`;
   price: number;
   id: number;
   name: string;

@@ -1,0 +1,23 @@
+.categoriesWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.button {
+  font-size: 24px;
+  border: none;
+  background-color: var(--fourthColor);
+  padding: 10px;
+  border-radius: 4px;
+  outline: none;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.activeButton,
+.button:hover {
+  background-color: var(--firstColor);
+  color: var(--fourthColor);
+}
