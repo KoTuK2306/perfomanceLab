@@ -1,0 +1,18 @@
+@import "../../index.css";
+
+.itemsWrapper {
+  display: grid;
+  grid-template-rows: min-content;
+  width: 100%;
+  color: var(--secondColor);
+}
+
+.head {
+  display: grid;
+  font-size: 20px;
+  text-align: center;
+  grid-template-columns: 20px 1fr 1fr 1fr;
+  padding: 20px;
+  background-color: var(--fourthColor);
+  border: 1px solid var(--firstColor);
+}
