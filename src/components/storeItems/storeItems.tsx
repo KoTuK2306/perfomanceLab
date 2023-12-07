@@ -23,7 +23,7 @@ export const StoreItems: FC<StoreItemsProps> = ({ items }) => {
             currentPage * itemsPerPage
           )
           .map(({ id, name, price }) => (
-            <StoreItem key={id} name={name} price={price} />
+            <StoreItem key={id} id={id} name={name} price={price} />
           ))}
       </div>
     </div>

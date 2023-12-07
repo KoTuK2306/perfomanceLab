@@ -11,6 +11,7 @@ type AppState = {
   sorting: Sorting;
   isOpenInfoAlert: boolean;
   textInfoAlert: string;
+  cartItems: Map<number, Omit<StoreProduct, "id" | "category">>;
 };
 
 export const initialState: AppState = {
@@ -22,6 +23,7 @@ export const initialState: AppState = {
   sorting: Sorting.UNDEFINED,
   isOpenInfoAlert: false,
   textInfoAlert: "",
+  cartItems: new Map(),
 };
 
 const appSlice = createSlice({
@@ -51,6 +53,12 @@ const appSlice = createSlice({
     changeTextInfoAlert(state, action: PayloadAction<string>) {
       state.textInfoAlert = action.payload;
     },
+    changeCartItems(
+      state,
+      action: PayloadAction<Map<number, Omit<StoreProduct, "id" | "category">>>
+    ) {
+      state.cartItems = action.payload;
+    },
   },
 });
 
@@ -62,5 +70,6 @@ export const {
   changeSorting,
   changeIsOpenInfoAlert,
   changeTextInfoAlert,
+  changeCartItems,
 } = appSlice.actions;
 export default appSlice.reducer;
