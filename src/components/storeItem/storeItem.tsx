@@ -15,26 +15,28 @@ export const StoreItem: FC<StoreItemProps> = ({ id, price, name }) => {
   const dispatch = useAppDispatch();
   const cartItems = useAppSelector((state) => state.app.cartItems);
 
+  const handleChange = (id: number) => {
+    if (cartItems.has(id)) {
+      const newItems = new Map(cartItems.entries());
+      newItems.delete(id);
+      dispatch(changeCartItems(newItems));
+      dispatch(changeIsOpenInfoAlert(true));
+      dispatch(changeTextInfoAlert("Элемент из корзины успешно удалён"));
+      return;
+    }
+    const newItems = new Map(cartItems.entries());
+    newItems.set(id, { id, price, name });
+    dispatch(changeCartItems(newItems));
+    dispatch(changeIsOpenInfoAlert(true));
+    dispatch(changeTextInfoAlert("Элемент в корзину успешно добавлен"));
+  };
+
   return (
     <div className={classes.gridRow}>
       <input
         checked={cartItems.has(id)}
         type="checkbox"
-        onChange={() => {
-          if (cartItems.has(id)) {
-            const newItems = new Map(cartItems.entries());
-            newItems.delete(id);
-            dispatch(changeCartItems(newItems));
-            dispatch(changeIsOpenInfoAlert(true));
-            dispatch(changeTextInfoAlert("Элемент из корзины успешно удалён"));
-            return;
-          }
-          const newItems = new Map(cartItems.entries());
-          newItems.set(id, { id, price, name });
-          dispatch(changeCartItems(newItems));
-          dispatch(changeIsOpenInfoAlert(true));
-          dispatch(changeTextInfoAlert("Элемент в корзину успешно добавлен"));
-        }}
+        onChange={() => handleChange(id)}
       />
       <p>{name}</p>
       <p>{`${price} ₽`}</p>
