@@ -5,12 +5,14 @@ type AppState = {
   items: StoreProduct[];
   isLoading: boolean;
   currentPage: number;
+  itemsPerPage: number;
 };
 
 export const initialState: AppState = {
   items: [],
   isLoading: false,
   currentPage: 1,
+  itemsPerPage: 18,
 };
 
 const appSlice = createSlice({
