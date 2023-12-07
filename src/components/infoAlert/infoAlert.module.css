@@ -1,0 +1,16 @@
+.textAlertWrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.textAlertWrapper > p {
+  font-size: 26px;
+  background-color: #a5dfa5;
+  color: #1a561a;
+  padding: 14px;
+  border-radius: 16px;
+}

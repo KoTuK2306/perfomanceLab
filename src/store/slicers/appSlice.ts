@@ -9,6 +9,8 @@ type AppState = {
   itemsPerPage: number;
   currentCategory: Categories;
   sorting: Sorting;
+  isOpenInfoAlert: boolean;
+  textInfoAlert: string;
 };
 
 export const initialState: AppState = {
@@ -18,6 +20,8 @@ export const initialState: AppState = {
   itemsPerPage: 15,
   currentCategory: Categories.FOOD,
   sorting: Sorting.UNDEFINED,
+  isOpenInfoAlert: false,
+  textInfoAlert: "",
 };
 
 const appSlice = createSlice({
@@ -41,6 +45,12 @@ const appSlice = createSlice({
     changeSorting(state, action: PayloadAction<Sorting>) {
       state.sorting = action.payload;
     },
+    changeIsOpenInfoAlert(state, action: PayloadAction<boolean>) {
+      state.isOpenInfoAlert = action.payload;
+    },
+    changeTextInfoAlert(state, action: PayloadAction<string>) {
+      state.textInfoAlert = action.payload;
+    },
   },
 });
 
@@ -50,5 +60,7 @@ export const {
   changeCurrentPage,
   changeCategory,
   changeSorting,
+  changeIsOpenInfoAlert,
+  changeTextInfoAlert,
 } = appSlice.actions;
 export default appSlice.reducer;

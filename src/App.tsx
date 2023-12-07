@@ -1,10 +1,9 @@
 import { useEffect } from "react";
-import { mockedData } from "./mocks";
+import { mockedData, StoreProduct } from "./mocks";
 import { LoadingPage, MainPage } from "./pages";
-import { useAppDispatch } from "./hooks/useAppDispatch";
+import { useAppDispatch, useAppSelector } from "./hooks";
 import { addItems, changeIsLoading } from "./store/slicers";
-import { StoreProduct } from "./mocks/mockedData";
-import { useAppSelector } from "./hooks/useAppSelector";
+import { InfoAlert } from "./components";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -25,6 +24,7 @@ function App() {
 
   return (
     <>
+      <InfoAlert />
       {isLoading && <LoadingPage />}
       <MainPage />
     </>
