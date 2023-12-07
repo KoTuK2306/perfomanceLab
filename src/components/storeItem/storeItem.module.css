@@ -4,7 +4,7 @@
   background-color: var(--fourthColor);
   height: min-content;
   border-bottom: 1px solid var(--firstColor);
-  grid-template-columns: 20px 1fr 1fr;
+  grid-template-columns: var(--mainGrid);
   text-align: center;
   color: var(--secondColor);
 }

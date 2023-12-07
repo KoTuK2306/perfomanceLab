@@ -1,8 +1,7 @@
 .head {
   display: grid;
-
   text-align: center;
-  grid-template-columns: 20px 1fr 1fr;
+  grid-template-columns: var(--mainGrid);
   padding: 20px;
   background-color: var(--fourthColor);
   border: 1px solid var(--firstColor);
@@ -12,6 +11,7 @@
   padding: 0;
   outline: none;
   border: 0;
+  font-weight: 700;
   background-color: transparent;
   cursor: pointer;
   font-size: 20px;
