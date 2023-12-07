@@ -1,7 +1,7 @@
-import classes from "./header.module.css";
-import { useAppSelector } from "./../../hooks/useAppSelector";
-import { useAppDispatch } from "./../../hooks/useAppDispatch";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { changeIsOpenSideBar } from "../../store/slicers";
+import classes from "./header.module.css";
 
 export const Header = () => {
   const dispatch = useAppDispatch();

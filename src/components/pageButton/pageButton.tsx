@@ -1,7 +1,6 @@
 import { FC } from "react";
-import { useAppSelector } from "./../../hooks";
+import { useAppSelector, useAppDispatch } from "../../hooks";
 import { changeCurrentPage } from "../../store/slicers";
-import { useAppDispatch } from "./../../hooks/useAppDispatch";
 import classes from "./pageButton.module.css";
 
 interface PageButtonProps {

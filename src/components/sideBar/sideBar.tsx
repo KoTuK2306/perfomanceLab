@@ -1,5 +1,5 @@
 import { SideBarContent } from "../sideBarContent";
-import { useAppSelector } from "../../hooks/useAppSelector";
+import { useAppSelector } from "../../hooks";
 import classes from "./sideBar.module.css";
 
 export const SideBar = () => {

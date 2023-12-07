@@ -1,6 +1,5 @@
 import { Arrow } from "../../images";
-import { useAppSelector } from "./../../hooks/useAppSelector";
-import { useAppDispatch } from "./../../hooks/useAppDispatch";
+import { useAppSelector, useAppDispatch } from "../../hooks";
 import { Sorting } from "../../enums";
 import { changeSorting } from "../../store/slicers";
 import classes from "./tableHead.module.css";

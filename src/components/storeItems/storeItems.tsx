@@ -2,7 +2,7 @@ import { FC } from "react";
 import { StoreProduct } from "../../mocks";
 import { StoreItem } from "../storeItem";
 import { TableHead } from "../tableHead";
-import { useAppSelector } from "./../../hooks";
+import { useAppSelector } from "../../hooks";
 import classes from "./storeItems.module.css";
 
 interface StoreItemsProps {

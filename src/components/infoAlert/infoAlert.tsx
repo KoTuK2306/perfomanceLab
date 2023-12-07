@@ -1,8 +1,7 @@
 import { useEffect } from "react";
-import { useAppSelector } from "../../hooks";
-import classes from "./infoAlert.module.css";
-import { useAppDispatch } from "./../../hooks/useAppDispatch";
+import { useAppSelector, useAppDispatch } from "../../hooks";
 import { changeIsOpenInfoAlert } from "../../store/slicers";
+import classes from "./infoAlert.module.css";
 
 export const InfoAlert = () => {
   const dispatch = useAppDispatch();

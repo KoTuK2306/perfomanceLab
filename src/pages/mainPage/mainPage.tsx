@@ -9,7 +9,7 @@ import {
 import { Sorting } from "../../enums";
 import { StoreProduct } from "../../mocks";
 import { sortStoreItems } from "../../utils";
-import { useAppSelector } from "./../../hooks/useAppSelector";
+import { useAppSelector } from "../../hooks/useAppSelector";
 import classes from "./mainPage.module.css";
 
 export const MainPage = () => {
