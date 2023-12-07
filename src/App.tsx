@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { mockedData } from "./mocks";
-import { LoadingPage } from "./pages";
+import { LoadingPage, MainPage } from "./pages";
 import { useAppDispatch } from "./hooks/useAppDispatch";
 import { addItems, changeIsLoading } from "./store/slicers";
 import { StoreProduct } from "./mocks/mockedData";
@@ -14,7 +14,7 @@ function App() {
     (function () {
       dispatch(changeIsLoading(true));
       const promise = new Promise<StoreProduct[]>((resolve) =>
-        setTimeout(() => resolve(mockedData), 1500)
+        setTimeout(() => resolve(mockedData), 2000)
       );
       promise.then((data) => {
         dispatch(changeIsLoading(false));
@@ -23,7 +23,12 @@ function App() {
     })();
   }, []);
 
-  return <>{isLoading && <LoadingPage />}</>;
+  return (
+    <>
+      {isLoading && <LoadingPage />}
+      <MainPage />
+    </>
+  );
 }
 
 export default App;

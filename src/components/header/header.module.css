@@ -1,0 +1,32 @@
+@import "../../index.css";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--fourthColor);
+  padding: 0px 76px;
+  height: var(--headerHeight);
+}
+
+.header > h1 {
+  color: var(--secondColor);
+}
+
+.burger {
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  width: 40px;
+  height: 40px;
+}
+
+.burger > svg {
+  width: 40px;
+  height: 40px;
+}
+
+.burger > svg * {
+  fill: var(--secondColor);
+}
