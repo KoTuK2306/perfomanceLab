@@ -7,16 +7,26 @@ export const StoreItems = () => {
   console.log(items);
 
   return (
-    <div className={classes.itemsWrapper}>
+    <div className={classes.gridWrapper}>
       <div className={classes.head}>
         <div />
         <p>Наименование товара</p>
         <p>Категория</p>
         <p>Цена</p>
       </div>
-      {items.map(({ id, category, name, price }) => (
-        <StoreItem key={id} category={category} name={name} price={price} />
-      ))}
+      <div className={classes.body}>
+        {items.map(
+          ({ id, category, name, price }) =>
+            id < 18 && (
+              <StoreItem
+                key={id}
+                category={category}
+                name={name}
+                price={price}
+              />
+            )
+        )}
+      </div>
     </div>
   );
 };

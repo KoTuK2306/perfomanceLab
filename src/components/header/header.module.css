@@ -11,6 +11,7 @@
 
 .header > h1 {
   color: var(--secondColor);
+  text-align: center;
 }
 
 .burger {
