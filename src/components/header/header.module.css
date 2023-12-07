@@ -28,4 +28,9 @@
 
 .burger > svg * {
   fill: var(--secondColor);
+  transition: all 0.1s;
+}
+
+.burger:hover svg * {
+  fill: var(--firstColor);
 }
