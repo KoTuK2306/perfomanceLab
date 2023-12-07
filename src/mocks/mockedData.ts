@@ -1,5 +1,6 @@
 type Category = "Еда" | "Одежда" | "Электроника";
-interface StoreProduct {
+
+export interface StoreProduct {
   category: Category;
   price: number;
   id: number;
