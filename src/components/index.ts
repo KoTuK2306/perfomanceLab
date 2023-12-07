@@ -6,3 +6,4 @@ export * from "./pageButton";
 export * from "./pagination/";
 export * from "./categories";
 export * from "./categoryButton";
+export * from "./tableHead";

@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { StoreProduct } from "../../mocks";
 import { StoreItem } from "../storeItem";
+import { TableHead } from "../tableHead";
 import { useAppSelector } from "./../../hooks";
 import classes from "./storeItems.module.css";
 
@@ -14,11 +15,7 @@ export const StoreItems: FC<StoreItemsProps> = ({ items }) => {
 
   return (
     <div className={classes.gridWrapper}>
-      <div className={classes.head}>
-        <div />
-        <p>Наименование товара</p>
-        <p>Цена</p>
-      </div>
+      <TableHead />
       <div className={classes.body}>
         {items
           .slice(
