@@ -1,8 +1,7 @@
 import { FC } from "react";
 import { StoreProduct } from "./../../mocks/mockedData";
 import classes from "./storeItem.module.css";
-import { useAppDispatch } from "./../../hooks/useAppDispatch";
-import { useAppSelector } from "../../hooks";
+import { useAppSelector, useAppDispatch } from "../../hooks";
 import {
   changeCartItems,
   changeIsOpenInfoAlert,
