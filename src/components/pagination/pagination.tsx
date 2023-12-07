@@ -18,7 +18,7 @@ export const Pagination: FC<PaginationProps> = ({ pagesCount }) => {
   return (
     <div className={classes.paginationWrapper}>
       {pages.map((number) => {
-        return <PageButton pageNumber={number} />;
+        return <PageButton key={number} pageNumber={number} />;
       })}
     </div>
   );

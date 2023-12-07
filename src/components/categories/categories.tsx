@@ -7,7 +7,7 @@ export const Categories = () => {
     <div className={classes.categoriesWrapper}>
       <h2>Категории:</h2>
       {Object.values(CategoriesEnum).map((category) => (
-        <CategoryButton category={category} />
+        <CategoryButton key={category} category={category} />
       ))}
     </div>
   );
