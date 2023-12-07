@@ -1,12 +1,12 @@
 import { FC } from "react";
 import { StoreProduct } from "./../../mocks/mockedData";
-import classes from "./storeItem.module.css";
 import { useAppSelector, useAppDispatch } from "../../hooks";
 import {
   changeCartItems,
   changeIsOpenInfoAlert,
   changeTextInfoAlert,
 } from "../../store/slicers";
+import classes from "./storeItem.module.css";
 
 type StoreItemProps = Omit<StoreProduct, "category">;
 
