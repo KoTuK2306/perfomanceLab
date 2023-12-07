@@ -1,8 +1,7 @@
 .content {
-  display: flex;
+  display: grid;
+  grid-template-rows: 1fr 40px;
   flex-direction: column;
-  gap: 20px;
-  flex: 0 0 auto;
   width: 100vw;
   height: calc(100vh - var(--headerHeight));
   padding: 40px 70px;

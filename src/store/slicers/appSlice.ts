@@ -12,7 +12,7 @@ export const initialState: AppState = {
   items: [],
   isLoading: false,
   currentPage: 1,
-  itemsPerPage: 18,
+  itemsPerPage: 17,
 };
 
 const appSlice = createSlice({

@@ -4,7 +4,8 @@ import classes from "./storeItems.module.css";
 
 export const StoreItems = () => {
   const items = useAppSelector((state) => state.app.items);
-  console.log(items);
+  const currentPage = useAppSelector((state) => state.app.currentPage);
+  const itemsPerPage = useAppSelector((state) => state.app.itemsPerPage);
 
   return (
     <div className={classes.gridWrapper}>
@@ -15,17 +16,14 @@ export const StoreItems = () => {
         <p>Цена</p>
       </div>
       <div className={classes.body}>
-        {items.map(
-          ({ id, category, name, price }) =>
-            id < 18 && (
-              <StoreItem
-                key={id}
-                category={category}
-                name={name}
-                price={price}
-              />
-            )
-        )}
+        {[...items]
+          .slice(
+            currentPage * itemsPerPage - itemsPerPage,
+            currentPage * itemsPerPage
+          )
+          .map(({ id, category, name, price }) => (
+            <StoreItem key={id} category={category} name={name} price={price} />
+          ))}
       </div>
     </div>
   );

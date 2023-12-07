@@ -1,5 +1,6 @@
 .gridWrapper {
   display: grid;
+  align-content: stretch;
   grid-template-rows: min-content;
   width: 100%;
   color: var(--secondColor);
@@ -7,8 +8,6 @@
 
 .head {
   display: grid;
-  position: sticky;
-  top: -50px;
   font-size: 20px;
   text-align: center;
   grid-template-columns: 20px 1fr 1fr 1fr;
