@@ -9,3 +9,4 @@ export * from "./categoryButton";
 export * from "./tableHead";
 export * from "./infoAlert";
 export * from "./sideBar";
+export * from "./sideBarContent";

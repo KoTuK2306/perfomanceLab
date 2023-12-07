@@ -1,0 +1,37 @@
+.sideBarWrapper > h3 {
+  font-size: 24px;
+  text-align: center;
+  color: var(--secondColor);
+  margin-bottom: 14px;
+}
+
+.cartItemWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--secondColor);
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.cartItemWrapper:hover {
+  cursor: pointer;
+  background-color: var(--firstColor);
+  filter: opacity(100%);
+  color: var(--fourthColor);
+}
+
+.delete {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.delete > img {
+  width: 28px;
+  height: 28px;
+}

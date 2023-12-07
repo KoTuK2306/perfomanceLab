@@ -30,7 +30,7 @@ export const StoreItem: FC<StoreItemProps> = ({ id, price, name }) => {
             return;
           }
           const newItems = new Map(cartItems.entries());
-          newItems.set(id, { price, name });
+          newItems.set(id, { id, price, name });
           dispatch(changeCartItems(newItems));
           dispatch(changeIsOpenInfoAlert(true));
           dispatch(changeTextInfoAlert("Элемент в корзину успешно добавлен"));

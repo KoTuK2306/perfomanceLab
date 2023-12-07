@@ -6,6 +6,5 @@
   width: 100vw;
   height: calc(100vh - var(--headerHeight));
   padding: 40px 70px;
-  overflow-x: hidden;
   background-color: var(--thirdColor);
 }

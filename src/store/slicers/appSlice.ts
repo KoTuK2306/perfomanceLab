@@ -11,7 +11,7 @@ type AppState = {
   sorting: Sorting;
   isOpenInfoAlert: boolean;
   textInfoAlert: string;
-  cartItems: Map<number, Omit<StoreProduct, "id" | "category">>;
+  cartItems: Map<number, Omit<StoreProduct, "category">>;
   isOpenSideBar: boolean;
 };
 
@@ -57,7 +57,7 @@ const appSlice = createSlice({
     },
     changeCartItems(
       state,
-      action: PayloadAction<Map<number, Omit<StoreProduct, "id" | "category">>>
+      action: PayloadAction<Map<number, Omit<StoreProduct, "category">>>
     ) {
       state.cartItems = action.payload;
     },
