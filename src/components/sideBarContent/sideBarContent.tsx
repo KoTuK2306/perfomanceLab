@@ -20,7 +20,7 @@ export const SideBarContent = () => {
           <div key={id} className={classes.cartItemWrapper}>
             <p>{`${name} ${price}₽`}</p>
             <button className={classes.delete} onClick={() => handleDelete(id)}>
-              <img src={"/public/cross.svg"} />
+              <img src={"/cross.svg"} />
             </button>
           </div>
         );

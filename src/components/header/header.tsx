@@ -15,7 +15,7 @@ export const Header = () => {
         className={classes.burger}
         onClick={() => dispatch(changeIsOpenSideBar(!isOpenSideBar))}
       >
-        <img src="/public/shoppingCart.svg" />
+        <img src="/shoppingCart.svg" />
       </button>
     </header>
   );
