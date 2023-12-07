@@ -1,19 +1,24 @@
-import { useEffect, useState } from "react";
-import { mockedData } from "./mocks/mockedData";
+import { useEffect } from "react";
+import { mockedData } from "./mocks";
 import { LoadingPage } from "./pages";
+import { useAppDispatch } from "./hooks/useAppDispatch";
+import { addItems, changeIsLoading } from "./store/slicers";
+import { StoreProduct } from "./mocks/mockedData";
+import { useAppSelector } from "./hooks/useAppSelector";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useAppDispatch();
+  const isLoading = useAppSelector((state) => state.app.isLoading);
 
   useEffect(() => {
     (function () {
-      setIsLoading(true);
-      const promise = new Promise((resolve) =>
+      dispatch(changeIsLoading(true));
+      const promise = new Promise<StoreProduct[]>((resolve) =>
         setTimeout(() => resolve(mockedData), 1500)
       );
       promise.then((data) => {
-        setIsLoading(false);
-        console.log(data);
+        dispatch(changeIsLoading(false));
+        dispatch(addItems(data));
       });
     })();
   }, []);

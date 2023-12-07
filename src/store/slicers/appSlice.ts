@@ -1,6 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { StoreProduct } from "../../mocks";
-import { initialState } from "../store";
+
+type AppState = {
+  items: StoreProduct[];
+  isLoading: boolean;
+};
+
+export const initialState: AppState = {
+  items: [],
+  isLoading: false,
+};
 
 const appSlice = createSlice({
   name: "app",
@@ -9,8 +18,11 @@ const appSlice = createSlice({
     addItems(state, action: PayloadAction<StoreProduct[]>) {
       state.items = action.payload;
     },
+    changeIsLoading(state, action: PayloadAction<boolean>) {
+      state.isLoading = action.payload;
+    },
   },
 });
 
-export const { addItems } = appSlice.actions;
+export const { addItems, changeIsLoading } = appSlice.actions;
 export default appSlice.reducer;
