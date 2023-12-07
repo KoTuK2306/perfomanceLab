@@ -1,0 +1,10 @@
+.content {
+  display: grid;
+  grid-template-rows: 48px 1fr 40px;
+  gap: 20px;
+  flex-direction: column;
+  width: 100vw;
+  height: calc(100vh - var(--headerHeight));
+  padding: 40px 70px;
+  background-color: var(--thirdColor);
+}

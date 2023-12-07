@@ -1,0 +1,10 @@
+.gridRow {
+  display: grid;
+  padding: 14px;
+  background-color: var(--fourthColor);
+  height: min-content;
+  border-bottom: 1px solid var(--firstColor);
+  grid-template-columns: 20px 1fr 1fr;
+  text-align: center;
+  color: var(--secondColor);
+}

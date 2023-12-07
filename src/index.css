@@ -1,9 +1,10 @@
 @font-face {
   font-family: "Roboto Regular";
-  src: url(/fonts/RobotoRegular.ttf);
+  src: url(/fonts/RobotoRegular.ttf) format("ttf");
 }
 
-body {
+* {
+  box-sizing: border-box;
   margin: 0px;
   padding: 0px;
 }
@@ -18,4 +19,8 @@ body {
 
   --firstColor: #ff5959;
   --secondColor: #1c1e3e;
+  --thirdColor: #dddddd;
+  --fourthColor: #fff;
+
+  --headerHeight: 66px;
 }

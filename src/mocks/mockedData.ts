@@ -1,6 +1,7 @@
-type Category = "Еда" | "Одежда" | "Электроника";
-interface StoreProduct {
-  category: Category;
+import { Categories } from "../enums";
+
+export interface StoreProduct {
+  category: `${Categories}`;
   price: number;
   id: number;
   name: string;

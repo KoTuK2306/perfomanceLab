@@ -1,19 +1,32 @@
-import * as React from "react";
-import { useState } from "react";
-import { mockedData } from "./mocks/mockedData";
+import { useEffect } from "react";
+import { mockedData, StoreProduct } from "./mocks";
+import { LoadingPage, MainPage } from "./pages";
+import { useAppDispatch, useAppSelector } from "./hooks";
+import { addItems, changeIsLoading } from "./store/slicers";
+import { InfoAlert } from "./components";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const dispatch = useAppDispatch();
+  const isLoading = useAppSelector((state) => state.app.isLoading);
 
-  React.useEffect(() => {
-    console.log(mockedData);
-  });
+  useEffect(() => {
+    (function () {
+      dispatch(changeIsLoading(true));
+      const promise = new Promise<StoreProduct[]>((resolve) =>
+        setTimeout(() => resolve(mockedData), 2000)
+      );
+      promise.then((data) => {
+        dispatch(changeIsLoading(false));
+        dispatch(addItems(data));
+      });
+    })();
+  }, []);
 
   return (
     <>
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
-      </button>
+      <InfoAlert />
+      {isLoading && <LoadingPage />}
+      <MainPage />
     </>
   );
 }

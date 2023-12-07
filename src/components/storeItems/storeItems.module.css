@@ -1,0 +1,7 @@
+.gridWrapper {
+  display: grid;
+  align-content: stretch;
+  grid-template-rows: min-content;
+  width: 100%;
+  color: var(--secondColor);
+}

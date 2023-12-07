@@ -1,0 +1,26 @@
+.sideBarWrapper {
+  position: absolute;
+  display: flex;
+  right: 0;
+  flex-direction: column;
+  gap: 14px;
+  top: var(--headerHeight);
+  height: calc(100vh - var(--headerHeight));
+  width: 0px;
+  background-color: var(--fourthColor);
+  transition: width 0.1s;
+  overflow-y: auto;
+}
+
+.sideBarWrapper > h3 {
+  font-size: 24px;
+  text-align: center;
+  color: var(--secondColor);
+  margin-bottom: 14px;
+}
+
+.activeSideBar {
+  width: 300px;
+  padding: 12px 20px;
+  border-left: 1px solid var(--firstColor);
+}
