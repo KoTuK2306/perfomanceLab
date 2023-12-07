@@ -9,6 +9,7 @@
   width: 0px;
   background-color: var(--fourthColor);
   transition: width 0.1s;
+  overflow-y: scroll;
 }
 
 .activeSideBar {
